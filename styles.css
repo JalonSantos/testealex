@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #d6336c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.container {
+    text-align: center;
+    max-width: 90%;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+
+.foto {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.foto.active {
+    display: block;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #d6336c;
+}
+
+.texto p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background-color: #d6336c;
+    margin: 10px auto;
+}
+
+.tempo {
+    margin-top: 20px;
+}
+
+.tempo-item {
+    border: 2px solid #d6336c;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    font-size: 1.8rem;
+    color: #fff;
+    width: 200px;
+    position: relative;
+}
+
+.tempo-item:not(:last-child)::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background-color: #d6336c;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
